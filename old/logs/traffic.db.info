@@ -1,0 +1,16 @@
+Die Berkeley DB Datei 
+ 
+wurde auf das aktuelle Datenbankformat (db4.4) aktualisiert.
+Die ursprüngliche Datei wurde gesichert als
+.org
+Falls bei der Konvertierung Fehler aufgetreten sind, folgen diese am
+Ende dieser Datei.
+================================
+The Berkeley DB file
+
+has been updated to the corrent version (db4.4).
+The original file has been saved to 
+.org
+If any errors occurred while upgrading the messages will appear at 
+the end of this file.
+================================

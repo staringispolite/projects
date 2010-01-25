@@ -1,0 +1,55 @@
+#wrapper {
+  background: #FBB03B;
+  text-align: center;
+  height: 100%;
+}
+
+#main {
+  width: 950px;
+  height: 100%;
+  margin: 0px auto;
+  text-align: left;
+  background: #FFFFFF;
+  overflow: hidden;
+  font-family: verdana, arial, sans-serif;
+  color: #333333;
+}
+
+#header {
+  height: 136px;
+  width: 100%;
+  background: #FFFFFF url('../images/header_slice_1px_2.gif') repeat-x top left;
+}
+
+#header img#logo {
+  margin-left: 20px;
+}
+
+#left_col {
+  float: left;
+  width: 400px;
+  margin: 20px 50px 0 20px;
+}
+
+#right_col {
+  float: left;
+  width: 400px;
+  margin: 20px 0 0 0;
+}
+
+#gallery a {
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
+h3.title {
+  margin-bottom: 0px;
+}
+
+h3.details {
+  color: #AAAAAA;
+  margin-top: 0px;
+  font-style: italic;
+  font-weight: normal;
+}

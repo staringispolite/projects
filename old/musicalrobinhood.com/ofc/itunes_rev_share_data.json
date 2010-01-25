@@ -1,0 +1,35 @@
+{
+  "elements": [
+    {
+      "type": "pie",
+      "colours": [
+        "#d01f3c",
+        "#356aa0",
+        "#C79810"
+      ],
+      "border": 2,
+      "start-angle": 35,
+      "animate": true,
+      "tip": "#val# of #total#<br>#percent# of 100%",
+      "values": [
+	    {
+		  "value": 14,
+		  "label": "Artist"
+		},
+	    {
+		  "value": 30,
+		  "label": "iTunes"
+		},
+	    {
+		  "value": 56,
+		  "label": "Label"
+		}
+	  ]
+    }
+  ],
+  "title": {
+    "text": "$9.99 iTunes CD"
+  },
+  "x_axis": null
+}
+

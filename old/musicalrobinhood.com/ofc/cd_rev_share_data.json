@@ -1,0 +1,42 @@
+{
+  "elements": [
+    {
+      "type": "pie",
+      "colours": [
+        "#d01f3c",
+        "#356aa0",
+        "#C79810"
+      ],
+      "border": 2,
+      "start-angle": 85,
+      "animate": true,
+      "tip": "#val# of #total#<br>#percent# of 100%",
+      "values": [
+	    {
+		  "value": 22,
+		  "label": "Other"
+		},
+	    {
+		  "value": 10,
+		  "label": "Artist"
+		},
+	    {
+		  "value": 15,
+		  "label": "Mkting"
+		},
+	    {
+		  "value": 29,
+		  "label": "Label"
+		},
+	    {
+		  "value": 24,
+		  "label": "Retail"
+		}
+      ]
+    }
+  ],
+  "title": {
+    "text": "$15.99 CD"
+  },
+  "x_axis": null
+}

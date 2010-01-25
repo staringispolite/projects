@@ -1,0 +1,30 @@
+{
+  "elements": [
+    {
+      "type": "pie",
+      "colours": [
+        "#d01f3c",
+        "#356aa0",
+        "#C79810"
+      ],
+      "border": 2,
+      "start-angle": 35,
+      "animate": true,
+      "tip": "#val# of #total#<br>#percent# of 100%",
+      "values": [
+	    {
+		  "value": 2,
+		  "label": "Paypal"
+		},
+	    {
+		  "value": 98,
+		  "label": "Artist"
+		}
+      ]
+    }
+  ],
+  "title": {
+    "text": "Our Donation"
+  },
+  "x_axis": null
+}

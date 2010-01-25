@@ -1,0 +1,13 @@
+Options +Indexes
+Satisfy any
+Order Deny,Allow
+Allow from 172.17.0.0/16
+Allow from 212.227.35.64/27
+Allow from 212.227.34.151
+Allow from 212.227.34.190
+Deny from all
+RemoveType .html .gif
+AuthType Basic
+AuthName "Access for /logs" 
+AuthUserFile /kunden/homepages/36/d95211367/htpasswd
+require user u35892253

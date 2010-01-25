@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>MusicalRobinhood.com</title>
+<script language="javascript" src="js/jquery/jquery-1.3.1.min.js"></script>
+<script type="text/javascript" src="ofc/js/swfobject.js"></script>
+<script type="text/javascript">
+  swfobject.embedSWF("ofc/open-flash-chart.swf?t=" + new Date().getTime(),
+                     "cd_chart", "150", "155", "9.0.0",
+					 "expressInstall.swf",
+					 {"data-file": "ofc/cd_rev_share_data.json?t=" + new Date().getTime()});
+  swfobject.embedSWF("ofc/open-flash-chart.swf?t=" + new Date().getTime(),
+                     "itunes_chart", "150", "155", "9.0.0",
+					 "expressInstall.swf",
+					 {"data-file": "ofc/itunes_rev_share_data.json?t=" + new Date().getTime()});
+  swfobject.embedSWF("ofc/open-flash-chart.swf?t=" + new Date().getTime(),
+                     "mr_chart", "150", "155", "9.0.0",
+					 "expressInstall.swf",
+					 {"data-file": "ofc/mr_rev_share_data.json?t=" + new Date().getTime()});
+</script>
+
+<link href="yui/build/reset/reset-min.css"
+      rel="stylesheet" type="text/css">
+<link href="yui/build/base/base-min.css"
+      rel="stylesheet" type="text/css">
+	  
+<style type="text/css">
+body {
+  background-color: black;
+  color: #637624;
+  text-align: center;
+}
+
+.site_width {
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#header {
+  text-align: left;
+  height: 120px;
+  overflow: hidden;
+}
+
+#header h2, #header h3 {
+  margin: 0px;
+}
+
+#main {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  text-align: left;
+  overflow: hidden; /* float clearing */
+}
+
+#main .left_col {
+  width: 450px;
+  float: left;
+}
+
+#main .left_right_spacer {
+  width: 20px;
+  height: 100%;
+  float: left;
+}
+
+#main .right_col {
+  width: 530px;
+  float: left;
+}
+
+img#logo {
+  margin: 5px auto 0px auto;
+}
+
+img#title {
+  margin: 20px auto 0px auto;
+}
+
+#main .content_wrapper {
+  width: 100%;
+  overflow: hidden; /* float clearing */
+  margin-bottom: 40px;
+}
+
+#main .content_wrapper h1 {
+  margin: 0px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #637624;
+}
+
+#main .content_wrapper .ofc_chart {
+  height: 150px;
+  width: 155px;
+  float: left;
+  margin: 10px;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+  <div id="header">
+    <div class="site_width">
+      <div>
+	    <h2>
+	      <img id="title" src="images/title.jpg" alt="MusicalRobinhood.com"/>
+        </h2>
+      </div>
+      <div>
+	    <h3>
+	      <img id="subtitle" src="images/subtitle.jpg"
+		       alt="Forget the rich. Give to your favorite bands."/>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div id="main">
+    <div class="site_width">
+      <div class="left_col">
+        <div>
+          <img id="logo" src="images/musicalrobinhood.jpg" alt="logo"/>
+        </div>
+	  </div>
+	  <div class="left_right_spacer"></div>
+	  <div class="right_col">
+	    <div class="content_wrapper">
+		  <h1>
+		    Typical Revenue Models for Artists
+		  </h1>
+		  <div class="content">
+		    <div class="ofc_chart">
+			  <div id="cd_chart"></div>
+			</div>
+		    <div class="ofc_chart">
+			  <div id="itunes_chart"></div>
+            </div>
+		    <div class="ofc_chart">
+			  <div id="mr_chart"></div>
+			</div>
+		  </div>
+		</div>
+	    <div class="content_wrapper">
+		  <h1>
+		    Why use Musical Robinhood?
+		  </h1>
+		  <div class="content">
+
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+</body>
+</html>
