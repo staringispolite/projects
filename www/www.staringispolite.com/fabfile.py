@@ -1,3 +1,4 @@
+from __future__ import with_statement
 from fabric.api import *
 
 
@@ -14,7 +15,7 @@ def prepare_deploy_www_staringispolite_com():
     '''
     Pack up www.staringispolite.com for sending (no tests yet)
     '''
-    local('tar -czf /tmp/www.staringispolite.com.tgz')
+    local('tar -czvf /tmp/www.staringispolite.com.tgz .')
 
 
 def deploy_www_staringispolite_com():
@@ -22,9 +23,9 @@ def deploy_www_staringispolite_com():
     Actually perform the deploy
     '''
     prepare_deploy_www_staringispolite_com()
-    put('/tmp/www.staringispolite.com.tgz', '/tmp/)
-    with cd('/var/www/www.staringispolite.com/')
-        run('tar -xzvf /tmp/my_project.tgz')
+    put('/tmp/www.staringispolite.com.tgz', '/tmp/')
+    with cd('/var/www/www.staringispolite.com/'):
+        run('tar -xzvf /tmp/www.staringispolite.com.tgz')
 
 def deploy():
    '''
