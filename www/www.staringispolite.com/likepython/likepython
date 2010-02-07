@@ -4,6 +4,7 @@
 # Created 2/6/2010
 # Description: OMG! It's like python, but like, totally casual!
 
+import os
 from subprocess import *
 import sys
 import tokenize
@@ -37,7 +38,8 @@ def main():
     # Run through python and return stdout
     call(["python", output_filename])
 
-    
+    # Remove temp file
+    os.remove(output_filename)    
 
 if __name__ == "__main__":
   main()
