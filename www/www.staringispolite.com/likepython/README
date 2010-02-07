@@ -4,7 +4,7 @@ DESCRIPTION
 -----------
 OMG! It's like Python, but like, you know, casual!
 
-Now you can toootally do just about everything you can do in that old, uptight language Python, but be like, so cool about it, bro
+Now you can toootally do just about everything you can do in that old, uptight language Python, but be like, so cool about it, bro!
 
 
 INSTALLATION
@@ -21,20 +21,22 @@ So like, that should totally work right? If so, you can test in on the hello wor
 
 USAGE
 -----
-LikePython adds keywords to python's lexical understanding, and is Python is a subset of LikePython, so anything you've written in python is valid LikePython.
+LikePython simply adds keywords to python's lexical understanding - so Python
+is a subset of LikePython, so anything you've written in python is valid
+LikePython. But you can also write like you'd speak, for example:
 
-But you can also write like you'd speak, for example:
     print something like "hello world" bro
 or
     ok so like if not input_var right:
       totally exit()
 
 A full list of LikePython keywords is below:
-	Valleygirl:	so, like, totally, right
-	Frat guy:	friggin, fuckin, dude, man, bro
-	Internets:	omg, lol, rofl
-	Local:		wicked, hella 
-	Misc: 		just, hey, yeah, ok, um, uh, ah, actually, something
+    Valleygirl:	omg, so, like, totally, right, toootally
+    Frat guy:	friggin, fuckin, dude, man, bro, broheim, broseph
+    Internets:	lol, rofl, teh, ohai, plz
+    Snoop:	yo, homey, homeboy, sup, dog, shit, girl, ma, biatch, ho, shiiit
+    Local:	wicked, hella, anyways 
+    Misc: 	just, hey, yeah, ok, um, uh, ah, actually, something
 
 
 VERSION
@@ -42,7 +44,7 @@ VERSION
 This is version 0.1, the stable alpha release. If you like it, let me know!
 jon@staringispolite.com
 
-Or, you know, if not, you can like, tell me what you think could be improved. It could like toootally be in the next release!
+Or, you know, if not, you can like, tell me what you think could be improved. Especially new words LikePython should include. It could like toootally be in the next release!
 
 
 LICENSE
