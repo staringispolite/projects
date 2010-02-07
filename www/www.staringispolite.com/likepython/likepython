@@ -1,0 +1,43 @@
+#!/usr/bin/python
+# File: likepython
+# Author: Jonathan Howard
+# Created 2/6/2010
+# Description: OMG! It's like python, but like, totally casual!
+
+from subprocess import *
+import sys
+import tokenize
+
+like_python_tokens = ['hey','omg','yeah','so','like','ok','um','uh','ah',
+                      'totally','right','actually','wicked','hella',
+                      'friggin','fuckin','something','dude','man','bro'
+                      'lol','rofl','just']
+
+def handle_input():
+  if len(sys.argv) == 2:
+    return sys.argv[1]
+  else:
+    print "Usage: likepython path/to/file.lp"
+    exit()
+
+def main():
+    # Parse input file for tokens
+    input_file = handle_input()
+    file = open(input_file)
+    tokens = tokenize.generate_tokens(file.readline)
+
+    # Remove likepython tokens, leaving valid python temp file behind.
+    py_tokens = [(type,token) for (type,token, _, _, _) in tokens if token not in like_python_tokens]
+    py = tokenize.untokenize(py_tokens)
+    output_filename = input_file + ".py"
+    output_file = open(output_filename, 'w')
+    output_file.write(py) 
+    output_file.close()
+
+    # Run through python and return stdout
+    call(["python", output_filename])
+
+    
+
+if __name__ == "__main__":
+  main()
