@@ -31,7 +31,7 @@
     }
 
     pre {
-      margin-right: 380px;
+      margin-right: 200px;
       margin-left: 40px;
       background-color: #e6e6ff;
       padding: 10px;
@@ -47,7 +47,7 @@
       width: 290px;
       height: 80px;
       z-index: 10;
-      position: fixed;
+      position: absolute;
       top: 20px;
       right: 100px;
       padding: 10px;
@@ -71,56 +71,68 @@
 </h1>
 
 <p>
-  OMG! It's like Python, but, you know, like, casual.
+  Like making computers do your bidding?<br/>
+  Enjoy Python features like lambdas? Indent-grouping? List comprehensions?<br/>
+  Tired of <strong>Old Man Python</strong> telling you what you can and can't say to <strong>your</strong> computer?<br/>
 </p>
 <p>
-  Like, Python was created by Jonathan Howard in February 2010.
-  Now you can toootally do just about everything you can do in that old, 
-  uptight language Python, but be like, so cool about it, and stuff. Anyways...
+ It's about time programming languages understood what the kids are typing
+ these days. So let's start with a baby step in that direction:
+ <em>Like, Python</em>. 
+</p>
+<p>
+  <em>Like, Python</em> was created by Jonathan Howard in February 2010 while
+  drinking and reviewing code for an upcoming project with a coworker. 
+  At a certain point, higher-level explanations devolved into just flat-out
+  reading Python code like they were actually speaking the language normally -
+  complete with like's, um's, whatever's, etc - making it completely
+  <span style="text-decoration: line-through">impractical</span>
+  awesome for work. It was then that Jonathan realized he should perhaps
+  stop for the night. And START creating <em>Like, Python</em>.
 </p>
 
 <h2>
-  INSTALLATION
+  EXAMPLE
 </h2>
 <p>
-  To install on linux, like, pretty much just unzip, make sure you have admin
-  privileges on your machine and, type the following from inside your
-  likepython directory:
+  <em>Like, Python</em> uses Python's own tokenizer to essentially add
+  keywords to Python's lexical understanding.
+  Python is a subset of <em>Like, Python</em>, so any scripts you've already
+  written in Python is valid <em>Like, Python</em> and will run in the 
+  interpreter.
+  But you can also write like you'd speak. For example, the following is a
+  fully-functional "hello world" script, included in the download as 
+  hello_world.lp:
 </p>
 <pre>
-  sudo cp ./likepython /usr/bin/
-  sudo chmod 555 /usr/bin/likepython
-</pre>
-<p>
-  So like, that should totally work right? If so, you can test in on the 
-  hello world file included in the distro like so:
-</p>
-<pre>
-  likepython hello_world.lp
-</pre>
+  #!usr/bin/python
+  # My first Like, Python script!
 
-<h2>
-  USAGE
-</h2>
-<p>
-  Like, Python simply adds keywords to python's lexical understanding -
-  so Python is a subset of Like, Python, so anything you've written in 
-  python is valid Like, Python. But you can also write like you'd speak,
-  for example:
-</p>
-<pre>
   yo just print like "hello world" bro
 </pre>
 <p>
-  or
+  Here's a version that asks you for your name, then says hi.
+  (Note that 'yo' is a <em>Like, Python</em> keyword but the interpreter
+  actually understands real Python syntax, so the 'yo' in the input string
+  works just fine.
 </p>
 <pre>
-  ok so like if not input_var right:
-  &nbsp;&nbsp;&nbsp;&nbsp;totally exit()
+  #!usr/bin/python
+  uh from sys import exit
+
+  # Grab the user's name. 
+  ok so like name = raw_input("yo! what's your name?" ) right
+  
+  # Make sure they enteres something, then say hi.
+  if name.strip() is actually like "":
+      toootally just exit()
+  else:
+      um yeah
+      print like "Hi %s, nice to meet you." % name
 </pre>
 
 <p>
-A full list of Like, Python keywords is below:
+A full list of <em>Like, Python</em> keywords is below:
 </p>
 <p>
 <ul>
@@ -146,6 +158,26 @@ A full list of Like, Python keywords is below:
 </p>
 
 <h2>
+  INSTALLATION
+</h2>
+<p>
+  To install on Mac OSX and Linux, just unzip, make sure you have admin
+  privileges on your machine and, type the following from inside your
+  likepython directory:
+</p>
+<pre>
+  ~/downloads/likepython> sudo cp ./likepython /usr/bin/
+  ~/downloads/likepython> sudo chmod 555 /usr/bin/likepython
+</pre>
+<p>
+  If everything went well, you can now code in <em>Like, Python</em>!
+  Test it on hello_world.lp (included) like so:
+</p>
+<pre>
+  ~/downloads/likepython> likepython hello_world.lp
+</pre>
+
+<h2>
 VERSION
 </h2>
 <p>
@@ -156,9 +188,7 @@ VERSION
 <p>
   Or, you know, if not, you can like, tell me what you think
   could be improved. Especially new words Like, Python should include.
-</p>
-<p>
-  Bro: it could like totally be in the next release.
+  Bro - it could like totally be in the next release.
 </p>
 
 <h2>
@@ -192,9 +222,12 @@ THE SOFTWARE.
 </p>
 
 <div class="download">
-  <h2>
+  <h2 style="margin-bottom: 5px">
     Download Like, Python now!
   </h2>
+  <div style="margin-bottom: 5px">
+    (Yep! It's <em>actually</em> real)
+  </div>
   <a href="./likepython_0.1.tgz">linux/mac (.tgz)</a>
   |
   <a href="./likepython_0.1.tgz">windows (.zip)</a>
