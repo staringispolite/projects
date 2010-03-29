@@ -15,6 +15,46 @@
       text-align: center;
     }
 
+    td {
+      vertical-align: top;
+    }
+
+    .header {
+      font-family: Tahoma;
+      font-size: 16px;
+      margin: 20px 0 0;
+    }
+
+    .header p {
+      color: #333;
+    }
+
+    .header h1 {
+      margin-top: 0;
+    }
+
+    .footer {
+      margin-bottom: 50px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3B5998;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .icon img {
+      width: 100px;
+      height: 100px;
+    }
+
+    img#logo {
+      margin: 2px 20px 0 0;
+    }
+
     .main {
       width: 760px;
       margin: 0px auto;
@@ -58,24 +98,26 @@
 </head>
 <body>
 <div class="main">
-	<a href = 'resume.doc'> 
-		View Formatted Resume
-	</a> (Word)
-	&nbsp;&nbsp;|&nbsp;&nbsp;
-	<a href = 'UMD_Game_Design_Proposal.doc'>
-		Game Design Course Proposal
-	</a> to the UMD Computer Science Dept.
-	<hr/>
   <div class="header">
     <table cellspacing="0" cellpadding="0">
       <tr>
         <td class="icon">
-          <img src="" alt="" />
+          <img id="logo" alt="" 
+               src="http://www.staringispolite.com/images/sun_logo.jpeg" />
         </td>
         <td>
           <h1>Jonathan Howard</h1>
           <p>
-            81 Albion St. #3, San Francisco, CA 94103 * (240)338-0381 * jon@staringispolite.com
+            Programmer. Product Guy. Entrepreneur. 
+          </p>
+          <p>
+            San Francisco, CA
+            &#149;
+            (240)338-0381
+            &#149;
+            howard.<span style="display:none">kenneth.</span>jonathan@gmail.com
+            &#149;
+            <a href="http://twitter.com/staringispolite">@staringispolite</a>
           </p>
         </td>
       </tr>
@@ -90,12 +132,49 @@
             Creator
           </td>
           <td class="date">
+            Feb 2010
+          </td>
+        </tr>
+        <tr>
+          <td class="title">
+            <strong>Like, Python</strong>
+            <a href="http://www.staringispolite.com/likepython">(http://www.staringispolite.com/likepython)</a>
+          </td>
+          <td class="location">
+            San Francisco, CA
+          </td>
+        </tr>
+      </table>
+      <p>
+        <ul>
+          <li>
+            Tired of <strong>Old Man Python</strong> telling you what you can
+            and can't say to your computer? It's about time programming
+            languages understood what the kids are typing these days.
+            Like, Python lets you write in Python but insert slang of
+            your choosing.
+          </li>
+          <li>
+            Made the Reddit & Hacker News YC homepages, and was #1 on 
+            Reddit Programming for a day.
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div class="item">
+      <table cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="position">
+            Creator
+          </td>
+          <td class="date">
             March 2009
           </td>
         </tr>
         <tr>
           <td class="title">
-            <strong>SevenUp</strong> (http://code.google.com/p/sevenup)
+            <strong>SevenUp</strong>
+            <a href="http://code.google.com/p/sevenup">(http://code.google.com/p/sevenup)</a>
           </td>
           <td class="location">
             Boston, Massachussetts
@@ -133,7 +212,7 @@
         </tr>
         <tr>
           <td class="title">
-            <strong>Univ. of Maryland</strong> Games Programming course
+            <strong>Univ. of Maryland</strong> Games Programming course (<a href="http://www.cs.umd.edu/class/spring2010/cmsc498m/">Spring 2010 website</a>)
           </td>
           <td class="location">
             College Park, Maryland
@@ -145,13 +224,13 @@
           <li>
             Proposed and helped create the University's first games 
             programming course, which is still taught today. Written
-            proposal available at http://www.staringispolite.com/proposal.doc
+            proposal available at <a href="http://www.staringispolite.com/proposal.doc">http://www.staringispolite.com/proposal.doc</a>
           </li>
           <li>
             Designed and pitched "Super Graphics Bros.," a 3D twist on 
             the Mario franchise, starring the class's professors.
             Recruited and led engineers for the semester-long project.
-            (http://www.staringispolite.com/sgb)
+            (<a href="ttp://www.staringispolite.com/sgb">http://www.staringispolite.com/sgb</a>)
           </li>
           <li>
             Coordinated a team of 4 programmers & artists.
@@ -170,6 +249,31 @@
       <table cellpadding="0" cellspacing="0">
         <tr>
           <td class="position">
+            Software Engineer 
+          </td>
+          <td class="date">
+            Feb 2010 - Present
+          </td>
+        </tr>
+        <tr>
+          <td class="title">
+            <strong>LOLapps</strong> (<a href="http://www.lolapps.com">http://www.lolapps.com</a>)
+          </td>
+          <td class="location">
+            San Francisco, CA
+          </td>
+        </tr>
+      </table>
+      <p>
+        Rapidly releasing features for LOLapps' many Facebook games:
+        Python for backend and memcached code; HTML, CSS, Javascript/JQuery,
+        and ActionScript for frontend. 
+      </p>
+    </div>
+    <div class="item">
+      <table cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="position">
             Senior Application Architect
           </td>
           <td class="date">
@@ -178,7 +282,8 @@
         </tr>
         <tr>
           <td class="title">
-            <strong>Rakuten USA</strong> (http://www.rakutenusa.com)
+            <strong>Rakuten USA</strong>
+            (<a href="http://www.rakutenusa.com">http://www.rakutenusa.com</a>)
           </td>
           <td class="location">
             Boston, Massachussetts
@@ -206,7 +311,8 @@
         </tr>
         <tr>
           <td class="title">
-            <strong>FreeCause, Inc</strong> (http://www.freecause.com)
+            <strong>FreeCause, Inc</strong>
+            (<a href="http://www.freecause.com">http://www.freecause.com</a>)
           </td>
           <td class="location">
             Boston, Massachussetts
@@ -232,7 +338,7 @@
             Led requirements discovery, brainstorming, and design process
             for many projects, including an event system for ACS, 
             embeddable widgets for the NFL, http://www.AppBar.com,
-            and PlatformCMS
+            and PlatformCMS.
           </li>
         </ul>
       </p>
@@ -287,7 +393,7 @@
         <tr>
           <td class="title">
             <strong>Univ. of Maryland</strong> CATT Laboratories
-            (http://www.cattlab.umd.edu)
+            (<a href="http://www.cattlab.umd.edu">http://www.cattlab.umd.edu</a>)
           </td>
           <td class="location">
             College Park, Maryland
@@ -331,7 +437,8 @@
         </tr>
         <tr>
           <td class="title">
-            <strong>Google, Inc</strong> Lively (http://www.lively.com)
+            <strong>Google, Inc</strong> Lively
+            (<a href="http://www.lively.com">http://www.lively.com</a>)
           </td>
           <td class="location">
             Mountain View, California
@@ -371,7 +478,7 @@
         <tr>
           <td class="title">
             <strong>Univ. of Maryland</strong> Catt Laboratories
-            (http://www.catlab.umd.edu)
+            (<a href="http://www.catlab.umd.edu">http://www.catlab.umd.edu</a>)
           </td>
           <td class="location">
             College Park, Maryland
@@ -387,7 +494,7 @@
             DC-area highway system.
           </li>
           <li>
-            Collaborated with the team¿s artist to create a content pipeline
+            Collaborated with the team's artist to create a content pipeline
             and solve technical workflow issues.
           </li>
         </ul>
@@ -401,7 +508,7 @@
     <table cellpadding="0" cellspacing="0">
       <tr>
         <th>Programming</th>
-        <td>Python, PHP, MySQL, Code Igniter, Perl, C++, C, Ruby, Java, OpenGL</td>
+        <td>Python, ActionScript, PHP, MySQL, Code Igniter, Perl, C++, C, Ruby, Java, OpenGL</td>
       </tr>
       <tr>
         <th>Web Front-end</th>
@@ -474,13 +581,22 @@
             Conversational in French as a second language.
           </li>
           <li>
-            Upping the stats on http://staringispolite.com/records
+            Upping the stats on <a href="http://staringispolite.com/records">http://staringispolite.com/records</a>
           </li>
         </ul>
       </p>
     </div>
   </div>
-
+  <div class="footer">
+    <hr/>
+    <a href = 'resume.doc'> 
+	View Formatted Resume
+    </a> (Word)
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href = 'UMD_Game_Design_Proposal.doc'>
+	Game Design Course Proposal
+    </a> to the Univ. of MD Computer Science Dept.
+  </div>
 </div>
 </body>
 </html>
