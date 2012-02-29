@@ -1,0 +1,15 @@
+/* 
+    Document   : googleplusone
+    Author     : martijnh
+    Description: stylesheet for options page
+*/
+
+#googleone_preview {
+        float:left;
+        width:200px;
+        height:100px;
+        border: 1px dotted #CCCCCC;
+        background-image:url('plusonepreview.jpg');
+        background-repeat:no-repeat;
+        background-position:top left;
+}
