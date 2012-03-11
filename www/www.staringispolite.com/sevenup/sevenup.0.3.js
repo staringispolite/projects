@@ -13,7 +13,7 @@
 // Constructor technique advocated by Doug Crockford (of LSlint, JSON) in his recent Google tech talk.
 var sevenUp = function() {
   // Define 'private vars' here.
-	var osSupportsUpgrade = /(Windows NT 5.1|Windows NT 6.0|Windows NT 6.1|)/i.test(navigator.userAgent); // XP, Vista, Win7
+  var osSupportsUpgrade = /(Windows NT 5.1|Windows NT 6.0|Windows NT 6.1|)/i.test(navigator.userAgent); // XP, Vista, Win7
   var options = {  // Change these to fit your color scheme via the 'options' arg for test().
     enableClosing: true,
     enableQuitBuggingMe: true,
@@ -98,16 +98,17 @@ var sevenUp = function() {
     },
     test: function(newOptions, callback) {
       mergeInOptions(newOptions);
-  	  if (!isCookieSet()) {
-  	    // Write layer into the document.
-  	    var layerHTML = "<div id='sevenUpCallbackSignal'></div>";
+      if (!isCookieSet()) {
+        // Write layer into the document.
+        var layerHTML = "<div id='sevenUpCallbackSignal'></div>";
         if (options.overrideLightbox) {
           layerHTML += options.lightboxHTML;
         } else {
-          layerHTML += "<div id='sevenUpOverlay' style='" + overlayCSS() + "'>" +
-  	        "</div>" +
-            "<div id='sevenUpLightbox' style='" + lightboxCSS() + "'>" +
-              lightboxContents() +
+          layerHTML += "<div id='sevenUpOverlay' style='" + 
+                this.overlayCSS() + "'>" +
+            "</div>" +
+            "<div id='sevenUpLightbox' style='" + this.lightboxCSS() + "'>" +
+              this.lightboxContents() +
             "</div>";
         }
         if (options.showToAllBrowsers !== true) {
@@ -115,7 +116,7 @@ var sevenUp = function() {
         }
         var layer = document.createElement('div');
         layer.innerHTML = layerHTML;
-  	    document.body.appendChild(layer);
+        document.body.appendChild(layer);
         // Fire callback.
         // I don't like this hack but IE6 seems to restrict dynamically created <script> tags to <head> only, 
         // and I don't see a way to add conditional comments around the script tag or its contents.
@@ -123,8 +124,8 @@ var sevenUp = function() {
         if (callback && document.getElementById('sevenUpCallbackSignal')) {
           callback(options);
         }
-  	  }  
-  	},
+      }  
+    },
     quitBuggingMe: function() {
       var exp = new Date();
       exp.setTime(exp.getTime()+(7*24*3600000));
