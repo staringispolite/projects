@@ -80,6 +80,14 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+/**
+ * W3 Total Cache
+ */
+// Enable caching
+define('WP_CACHE', true);
+// Initialization hits memory limit of 34M
+ini_set('memory_limit', '64M');
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
