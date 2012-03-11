@@ -320,7 +320,8 @@ body, input, textarea {
 	line-height: 1.625;
 }
 body {
-	background: #e2e2e2;
+	/*background: #e2e2e2;*/
+    background: #d0e2f1;
 }
 #page {
 	background: #fff;
@@ -2228,6 +2229,14 @@ p.comment-form-comment {
 }
 #supplementary.three .widget-area + .widget-area + .widget-area {
 	margin-right: 0;
+}
+
+#supplementary #second {
+    text-align: center;
+}
+
+#supplementary #third {
+    text-align: right;
 }
 
 /* Site Generator Line */
