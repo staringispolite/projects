@@ -74,6 +74,7 @@ body {
 #page {
 	margin: 2em auto;
 	max-width: 1000px;
+    min-width: 580px;
 }
 #branding hgroup {
 	margin: 0 4%;
@@ -383,6 +384,7 @@ blockquote {
 	font-style: italic;
 	font-weight: normal;
 	margin: 0 3em;
+    overflow: hidden;
 }
 blockquote em, blockquote i, blockquote cite {
 	font-style: normal;
@@ -509,7 +511,31 @@ a:hover {
 }
 #site-title {
 	margin-right: 270px;
-	padding: 2.5em 0 0;
+    width: 385px;
+    height: 100px;
+    margin: 23px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 30;
+    z-index: 200;
+}
+#site-title-background {
+    width: 385px;
+    background-color: white;
+    height: 100px;
+    margin: 23px 0 0 0;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    position: absolute;
+    top: 0;
+    left: 30;
+    z-index: 100;
+}
+#site-title img {
+    margin: 12px 15px 0 15px;
+}
+#site-title #name {
+    padding-top: 20px;
 }
 #site-title a {
 	color: #111;
@@ -524,9 +550,8 @@ a:hover {
 	color: #1982d1;
 }
 #site-description {
-	color: #7a7a7a;
+	color: #2a2a2a;
 	font-size: 14px;
-	margin: 0 270px 3.65625em 0;
 }
 #branding img {
 	height: auto;
@@ -538,6 +563,7 @@ a:hover {
     overflow: hidden;
     width: 100%;
     display: block;
+    background: url('http://staringispolite.com/blog/wp-content/themes/twentyeleven/images/headers/wheel.jpg') no-repeat;
 }
 
 
@@ -2269,6 +2295,7 @@ p.comment-form-comment {
 
 @media (max-width: 800px) {
 	/* Simplify the basic layout */
+
 	#main #content {
 		margin: 0 7.6%;
 		width: auto;
@@ -2294,11 +2321,32 @@ p.comment-form-comment {
 		margin: 0;
 		width: 100%;
 	}
-	.page-template-showcase-php #main .widget-area {
-		float: none;
-		margin: 0;
-		width: auto;
-	}
+
+    /* Two Footer Widget Areas */
+    #supplementary.two .widget-area {
+        float: left;
+        margin-right: 3.7%;
+        width: 48.1%;
+    }
+    #supplementary.two .widget-area + .widget-area {
+        margin-right: 0;
+    }
+
+    /* Three Footer Widget Areas */
+    #supplementary.three .widget-area {
+        float: left;
+        margin-right: 3.7%;
+        width: 30.85%;
+    }
+
+    #supplementary #second {
+        text-align: center;
+    }
+
+    #supplementary #third {
+        text-align: right;
+    }
+
 	.page-template-showcase-php .other-recent-posts {
 		border-bottom: 1px solid #ddd;
 	}
@@ -2366,12 +2414,6 @@ p.comment-form-comment {
 	#respond {
 		width: auto;
 	}
-	/* No need to float footer widgets at this size */
-	#colophon #supplementary .widget-area {
-		float: none;
-		margin-right: 0;
-		width: auto;
-	}
 	/* No need to float 404 widgets at this size */
 	.error404 #main .widget {
 		float: none;
@@ -2416,9 +2458,34 @@ p.comment-form-comment {
 		font-size: 17px;
 	}
 	/* Reposition the site title and description slightly */
-	#site-title {
-		padding: 5.30625em 0 0;
-	}
+    #site-title {
+        margin-right: 270px;
+        width: 325px;
+        height: 100px;
+        margin: 23px 0 0 0;
+        position: absolute;
+        top: 0;
+        left: 30;
+        z-index: 200;
+    }
+    #site-title-background {
+        width: 325px;
+        background-color: white;
+        height: 100px;
+        margin: 23px 0 0 0;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        position: absolute;
+        top: 0;
+        left: 30;
+        z-index: 100;
+    }
+    #site-title img {
+        margin: 12px 15px 0 15px;
+    }
+    #site-title #name {
+        padding-top: 20px;
+    }
 	#site-title,
 	#site-description {
 		margin-right: 0;

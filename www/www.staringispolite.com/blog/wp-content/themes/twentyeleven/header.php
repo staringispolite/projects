@@ -70,37 +70,21 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed">
 	<header id="branding" role="banner">
+          <div id="main-image"
+              style="background-image: url('<?php echo header_image();?>');">
 			<hgroup>
 				<h1 id="site-title">
-                  <img src="http://www.staringispolite.com/images/sun_logo.jpeg"
-                       style="width: 75px; height: 75px; float: left; margin-right: 1.5em"/>
-                  <span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img
+                      src="http://www.staringispolite.com/images/sun_logo.jpeg"
+                      style="width: 75px; height: 75px; float: left;"/></a>
+                  <div id="name">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                  </div>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
                </h1>
+               <h1 id="site-title-background"></h1>
 			</hgroup>
-
-			<?php
-				// Check to see if the header image has been removed
-				$header_image = get_header_image();
-				if ( ! empty( $header_image ) ) :
-			?>
-            <div id="main-image">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<?php
-					// The header image
-					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-					if ( is_singular() &&
-							has_post_thumbnail( $post->ID ) &&
-							( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( HEADER_IMAGE_WIDTH, HEADER_IMAGE_WIDTH ) ) ) &&
-							$image[1] >= HEADER_IMAGE_WIDTH ) :
-						// Houston, we have a new header image!
-						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-					else : ?>
-					<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-				<?php endif; // end check for featured image or standard header ?>
-			</a>
-            </div>
-			<?php endif; // end check for removed header image ?>
+          </div>
 
 			<?php
 				// Has the text been hidden?
