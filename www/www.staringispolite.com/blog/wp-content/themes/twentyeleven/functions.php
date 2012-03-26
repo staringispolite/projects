@@ -142,53 +142,101 @@ function twentyeleven_setup() {
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
-		'wheel' => array(
-			'url' => '%s/images/headers/wheel.jpg',
-			'thumbnail_url' => '%s/images/headers/wheel-thumbnail.jpg',
+		#'wheel' => array(
+		#	'url' => '%s/images/headers/wheel.jpg',
+		#	'thumbnail_url' => '%s/images/headers/wheel-thumbnail.jpg',
+		#	/* translators: header image description */
+		#	'description' => __( 'Wheel', 'twentyeleven' )
+		#),
+		'cork' => array(
+			'url' => '%s/images/headers/cork.jpg',
+			'thumbnail_url' => '%s/images/headers/cork-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Wheel', 'twentyeleven' )
+			'description' => __( 'Cork', 'twentyeleven' )
 		),
-		'shore' => array(
-			'url' => '%s/images/headers/shore.jpg',
-			'thumbnail_url' => '%s/images/headers/shore-thumbnail.jpg',
+		'jonathan-howard-desolation' => array(
+			'url' => '%s/images/headers/jonathan-howard-desolation.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-desolation.jpg',
 			/* translators: header image description */
-			'description' => __( 'Shore', 'twentyeleven' )
+			'description' => __( 'Desolation', 'twentyeleven' )
 		),
-		'trolley' => array(
-			'url' => '%s/images/headers/trolley.jpg',
-			'thumbnail_url' => '%s/images/headers/trolley-thumbnail.jpg',
+		'jonathan-howard-golfing' => array(
+			'url' => '%s/images/headers/jonathan-howard-golfing.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-golfing-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Trolley', 'twentyeleven' )
+			'description' => __( 'Golfing', 'twentyeleven' )
 		),
-		'pine-cone' => array(
-			'url' => '%s/images/headers/pine-cone.jpg',
-			'thumbnail_url' => '%s/images/headers/pine-cone-thumbnail.jpg',
+		'jonathan-howard-hawaii-1' => array(
+			'url' => '%s/images/headers/jonathan-howard-hawaii-1.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-hawaii-1-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Pine Cone', 'twentyeleven' )
+			'description' => __( 'Hawaii1', 'twentyeleven' )
 		),
-		'chessboard' => array(
-			'url' => '%s/images/headers/chessboard.jpg',
-			'thumbnail_url' => '%s/images/headers/chessboard-thumbnail.jpg',
+		'jonathan-howard-hawaii-bird' => array(
+			'url' => '%s/images/headers/jonathan-howard-hawaii-bird.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-hawaii-bird-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Chessboard', 'twentyeleven' )
+			'description' => __( 'Bird', 'twentyeleven' )
 		),
-		'lanterns' => array(
-			'url' => '%s/images/headers/lanterns.jpg',
-			'thumbnail_url' => '%s/images/headers/lanterns-thumbnail.jpg',
+		'jonathan-howard-hawaii-fish' => array(
+			'url' => '%s/images/headers/jonathan-howard-hawaii-fish.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-hawaii-fish-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Lanterns', 'twentyeleven' )
+			'description' => __( 'Fish', 'twentyeleven' )
 		),
-		'willow' => array(
-			'url' => '%s/images/headers/willow.jpg',
-			'thumbnail_url' => '%s/images/headers/willow-thumbnail.jpg',
+		'jonathan-howard-jungshin' => array(
+			'url' => '%s/images/headers/jonathan-howard-jungshin.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-jungshin-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Willow', 'twentyeleven' )
+			'description' => __( 'Jungshin', 'twentyeleven' )
 		),
-		'hanoi' => array(
-			'url' => '%s/images/headers/hanoi.jpg',
-			'thumbnail_url' => '%s/images/headers/hanoi-thumbnail.jpg',
+		'jonathan-howard-kayaks' => array(
+			'url' => '%s/images/headers/jonathan-howard-kayaks.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-kayaks-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Hanoi Plant', 'twentyeleven' )
+			'description' => __( 'Kayaks', 'twentyeleven' )
+		),
+		'jonathan-howard-lamborghini-painting' => array(
+			'url' => '%s/images/headers/jonathan-howard-lamborghini-painting.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-lamborghini-painting-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'Lambirghini', 'twentyeleven' )
+		),
+		'jonathan-howard-mauna-kea' => array(
+			'url' => '%s/images/headers/jonathan-howard-mauna-kea.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-mauna-kea-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'MaunaKea', 'twentyeleven' )
+		),
+		'jonathan-howard-observatory-sunset' => array(
+			'url' => '%s/images/headers/jonathan-howard-observatory-sunset.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-observatory-sunset-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'ObservatorySunset', 'twentyeleven' )
+		),
+		'jonathan-howard-observatory' => array(
+			'url' => '%s/images/headers/jonathan-howard-observatory.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-observatory-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'Observatory', 'twentyeleven' )
+		),
+		'jonathan-howard-sun-rays' => array(
+			'url' => '%s/images/headers/jonathan-howard-sun-rays.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-sun-rays-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'Sunrays', 'twentyeleven' )
+		),
+		'jonathan-howard-sunset' => array(
+			'url' => '%s/images/headers/jonathan-howard-sunset.jpg',
+			'thumbnail_url' => '%s/images/headers/jonathan-howard-sunset-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'Sunset', 'twentyeleven' )
+		),
+		'lava' => array(
+			'url' => '%s/images/headers/lava.jpg',
+			'thumbnail_url' => '%s/images/headers/lava-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'Lava', 'twentyeleven' )
 		)
 	) );
 }
