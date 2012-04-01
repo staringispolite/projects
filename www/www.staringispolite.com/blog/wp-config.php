@@ -33,6 +33,18 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/**
+ * FTP
+ */
+define('FTP_HOST', 'ftp://staringispolite.com');
+define('FTP_USER', 'wpuser');
+define('FTP_PASS', 'passWPword1.');
+define('FTP_BASE', '/var/www/staringispolite.com/');
+define('FTP_CONTENT_DIR', '/var/www/staringispolite.com/wp-content/');
+define('FTP_PLUGIN_DIR', '/var/www/staringispolite.com/wp-content/plugins/');
+define('FS_METHOD', 'ftpext');
+define('FTP_SSL', false);
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
