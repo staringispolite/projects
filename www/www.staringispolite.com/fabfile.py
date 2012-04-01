@@ -2,7 +2,7 @@ from __future__ import with_statement
 from fabric.api import *
 
 
-env.hosts = ['www@174.143.158.94']
+env.hosts = ['www@staringispolite.com']
 
 def linux_type(): 
     '''
@@ -15,17 +15,22 @@ def prepare_deploy_www_staringispolite_com():
     '''
     Pack up www.staringispolite.com for sending (no tests yet)
     '''
-    local('tar -czvf /tmp/www.staringispolite.com.tgz .')
+    pass
 
 
 def deploy_www_staringispolite_com():
     '''
     Actually perform the deploy
     '''
-    prepare_deploy_www_staringispolite_com()
-    put('/tmp/www.staringispolite.com.tgz', '/tmp/')
-    with cd('/var/www/www.staringispolite.com/'):
-        run('tar -xzvf /tmp/www.staringispolite.com.tgz')
+    code_dir = '/Users/jhoward/Code/github/projects/www/www.staringispolite.com/'
+    remote_host = 'www@staringispolite.com'
+    remote_dir = '/var/www/www.staringispolite.com/'
+    local('rsync %sindex.html %s:%s' % (code_dir, remote_host, remote_dir))
+    local('rsync -avr %sblog/ %s:%sblog' % (code_dir, remote_host, remote_dir))
+    local('rsync -avr %slikepython/ %s:%slikepython' % (code_dir, remote_host, remote_dir))
+    local('rsync -avr %ssevenup/ %s:%ssevenup' % (code_dir, remote_host, remote_dir))
+    local('rsync -avr %ssgb/ %s:%ssgb' % (code_dir, remote_host, remote_dir))
+
 
 def deploy():
    '''
