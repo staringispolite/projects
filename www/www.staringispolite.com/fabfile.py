@@ -30,6 +30,7 @@ def deploy_www_staringispolite_com():
     local('rsync -avr %slikepython/ %s:%slikepython' % (code_dir, remote_host, remote_dir))
     local('rsync -avr %ssevenup/ %s:%ssevenup' % (code_dir, remote_host, remote_dir))
     local('rsync -avr %ssgb/ %s:%ssgb' % (code_dir, remote_host, remote_dir))
+    local('rsync -avr %snas/ %s:%ssgb' % (code_dir, remote_host, remote_dir))
 
 
 def deploy():
