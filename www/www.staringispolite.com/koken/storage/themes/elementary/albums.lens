@@ -1,0 +1,29 @@
+<koken:include file="layouts/header.html" />
+
+<koken:load limit="{{ settings.albums_index_limit }}">
+
+<koken:if exists="album">
+	<koken:include file="layouts/album_title_header.html" />
+</koken:if>
+
+<ol class="thumbs">
+
+	<koken:loop>
+		<koken:include file="layouts/album_index_loop.html" />
+	</koken:loop>
+
+</ol>
+
+<koken:include file="layouts/pagination.html" />
+
+<koken:else>
+
+	<koken:note>
+
+		<strong>No albums found.</strong> Create some in the Library.
+
+	</koken:note>
+
+</koken:load>
+
+<koken:include file="layouts/footer.html" />

@@ -1,0 +1,63 @@
+<koken:include file="layouts/header.html" />
+
+<koken:load limit="10">
+
+<div class="head">
+
+	<h2>
+		<koken:breadcrumbs separator="/" />
+	</h2>
+
+</div>
+
+<div id="twocol" class="flip">
+
+	<koken:loop>
+
+		<article>
+
+			<div class="lcol">
+
+				<koken:include file="layouts/article-aside.html" />
+
+			</div>
+
+			<div class="mcol">
+
+				<header>
+					<h2>
+						<koken:link>{{ essay.title }}</koken:link>
+					</h2>
+				</header>
+
+				{{ essay.content }}
+
+				<koken:discussion>
+
+					{{ discussion }}
+
+				</koken:discussion>
+
+			</div>
+
+		</article>
+
+		<hr>
+
+	</koken:loop>
+
+</div>
+
+<koken:include file="layouts/pagination.html" />
+
+<koken:else>
+
+	<koken:note>
+
+		<strong>No essays found.</strong> Write some in Text.
+
+	</koken:note>
+
+</koken:load>
+
+<koken:include file="layouts/footer.html" />

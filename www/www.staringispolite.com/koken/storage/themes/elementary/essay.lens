@@ -1,0 +1,90 @@
+<koken:include file="layouts/header.html" />
+
+<div id="twocol" class="flip">
+
+	<koken:load>
+
+		<koken:head>
+			<meta property="og:site_name" content="{{ site.title }}" />
+			<meta property="og:title" content="{{ essay.title strip_html="true" }}" />
+			<meta property="og:description" content="{{ essay.excerpt strip_html="true" }}" />
+			<meta property="og:url" content="{{ essay.url }}" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image" content="{{ essay.featured_image.presets.medium_large.url }}" />
+			<meta property="og:image:width" content="{{ essay.featured_image.presets.medium_large.width }}" />
+			<meta property="og:image:height" content="{{ essay.featured_image.presets.medium_large.height }}" />
+			<meta name="medium" content="article" />
+			<koken:not empty="profile.twitter">
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:title" content="{{ essay.title truncate="70" }}" />
+				<meta name="twitter:site" content="@{{ profile.twitter }}" />
+				<meta name="twitter:creator" content="@{{ profile.twitter }}" />
+				<meta name="twitter:description" content="{{ essay.excerpt truncate="200" strip_html="true" }}" />
+				<meta name="twitter:image" content="{{ essay.featured_image.presets.medium_large.url }}" />
+			</koken:not>
+		</koken:head>
+
+		<article>
+
+			<div class="lcol">
+
+				<koken:include file="layouts/article-aside.html" />
+
+			</div>
+
+			<div class="mcol">
+
+				<header>
+					<h2>
+						<koken:link>{{ essay.title }}</koken:link>
+					</h2>
+				</header>
+
+				{{ essay.content }}
+
+				<div class="essay-pag">
+					<ul>
+						<li>
+							<span class="cell left">
+								<koken:previous>
+									<koken:link title="Read {{ essay.title }}">&larr; {{ essay.title truncate="42" }}</koken:link>
+								</koken:previous>
+							</span>
+							<span class="cell right">
+								<koken:next>
+									<koken:link title="Read {{ essay.title }}">{{ essay.title truncate="42" }} &rarr;</koken:link>
+								</koken:next>
+							</span>
+						</li>
+					</ul>
+				</div>
+
+				<koken:if true="settings.show_disc_essay">
+
+					<div id="kdiscuss">
+
+						<koken:discussion>
+
+							{{ discussion }}
+
+						</koken:discussion>
+
+					</div>
+
+				</koken:if>
+
+			</div>
+
+		</article>
+
+		<koken:else>
+
+		No essays found. Create some in Text.
+
+	</koken:load>
+
+</div>
+
+<koken:asset file="js/elem-share.js" />
+
+<koken:include file="layouts/footer.html" />

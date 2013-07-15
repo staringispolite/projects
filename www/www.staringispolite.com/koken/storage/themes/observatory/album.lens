@@ -1,0 +1,173 @@
+<koken:include file="inc/header.html" />
+
+<koken:load infinite="true" limit="20">
+
+	<koken:head>
+		<meta property="og:site_name" content="{{ site.title }}" />
+		<meta property="og:title" content="{{ album.title strip_html="true" }}" />
+		<meta property="og:description" content="{{ album.summary | album.description strip_html="true" }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="{{ album.url }}" />
+		<koken:covers><koken:shift>
+		<meta property="og:image" content="{{ content.presets.medium_large.url }}" />
+		<meta property="og:image:width" content="{{ content.presets.medium_large.width }}" />
+		<meta property="og:image:height" content="{{ content.presets.medium_large.height }}" />
+		</koken:shift></koken:covers>
+		<koken:not empty="profile.twitter">
+			<meta name="twitter:card" content="gallery" />
+			<meta name="twitter:site" content="@{{ profile.twitter }}" />
+			<meta name="twitter:creator" content="@{{ profile.twitter }}" />
+			<koken:covers minimum="4" limit="4">
+				<koken:loop>
+					<meta name="twitter:image{{ index }}" content="{{ content.presets.medium_large.cropped.url }}">
+				</koken:loop>
+			</koken:covers>
+		</koken:not>
+	</koken:head>
+
+	<div class="content-row">
+
+		<div class="wrap">
+
+			<h2>{{ album.title }}</h2>
+			<koken:if true="settings.show_summary">{{ album.summary }}</koken:if>
+
+			<koken:if true="settings.social_bttns_show_album">
+				<koken:include file="inc/social-bttns.html" />
+			</koken:if>
+
+			<koken:topics>
+
+				<ol class="meta">
+					<li>
+					<strong>Read more:</strong>
+					<koken:loop separator=", ">
+						<koken:link>
+							{{ essay.title }}
+						</koken:link>
+					</koken:loop>
+					</li>
+				</ol>
+
+			</koken:topics>
+
+			<koken:categories>
+
+				<ol class="meta">
+					<li>
+					<strong>{{ labels.category.plural }}:</strong>
+					<koken:loop separator=", ">
+						<koken:link>
+							{{ category.title }}
+						</koken:link>
+					</koken:loop>
+					</li>
+				</ol>
+
+			</koken:categories>
+
+			<koken:tags>
+
+				<ol class="meta">
+					<li>
+					<koken:loop separator="&nbsp;&nbsp;">
+						<koken:link>
+							#{{ tag.title }}
+						</koken:link>
+					</koken:loop>
+					</li>
+				</ol>
+
+			</koken:tags>
+
+		</div>
+
+	</div>
+
+	<koken:if true="settings.social_bttns_show_one">
+
+		<koken:if true="album.public">
+
+			<ul class="social-links">
+				<li><koken:if empty="profile.twitter"><a href="https://twitter.com/intent/tweet?text={{ album.title url_encode="true" }}&url={{ album.url url_encode="true" }}" class="share-twitter" title="Share {{ album.title url_encode="true" }} on Twitter"><koken:else><a href="https://twitter.com/intent/tweet?text={{ album.title url_encode="true" }}&url={{ album.url url_encode="true" }}&via={{ profile.twitter }}" class="share-twitter" title="Share {{ album.title url_encode="true" }} on Twitter"></koken:if><i class="kicon-share-twitter"></i></a></li><li><a href="https://www.facebook.com/sharer.php?u={{ album.url url_encode="true" }}" class="share-facebook" title="Share {{ album.title url_encode="true" }} on Facebook"><i class="kicon-share-facebook"></i></a></li><li><a href="http://pinterest.com/pin/create/button/?url={{ album.url url_encode="true" }}&media={{ album.covers.first.presets.large.url url_encode="true" }}&description={{ album.title url_encode="true" }}" class="share-pinterest" title="Share {{ album.title url_encode="true" }} on Pinterest"><i class="kicon-share-pinterest"></i></a></li><li><a href="http://www.tumblr.com/share/photo?source={{ album.covers.first.presets.large.url url_encode="true" }}&caption=%3Cp%3E%3Cstrong%3E%3Ca href=&quot;{{ album.url url_encode="true" }}&quot; title=&quot;{{ album.title }}&quot;%3E{{ album.title }}%3C/a%3E%3C/strong%3E%3C/p%3E%3Cp%3E{{ album.description url_encode="true" }}%3C/p%3E&click_thru={{ album.url url_encode="true" }}" class="share-tumblr" title="Share {{ album.title url_encode="true" }} on Tumblr"><i class="kicon-share-tumblr"></i></a></li><li><a href="https://plus.google.com/share?url={{ album.url url_encode="true" }}" class="share-google" title="Share {{ album.title url_encode="true" }} on Google+"><i class="kicon-share-gplus"></i></a></li>
+			</ul>
+
+			<koken:asset file="js/obs-share.js" />
+
+		</koken:if>
+
+	</koken:if>
+
+	<koken:if true="settings.social_bttns_show_two">
+
+		<div id="social-bttns">
+			<div class="cell left">
+				<div style="float:right;">
+					<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+				</div>
+			</div>
+			<div class="cell right">
+				<div style="float:left;">
+					<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
+			</div>
+		</div>
+
+	</koken:if>
+
+	<koken:loop>
+
+		<div class="list-image">
+
+			<koken:content_video>
+				<koken:video />
+			</koken:content_video>
+
+			<koken:content_image>
+				<koken:link>
+					<koken:img lazy="true" />
+				</koken:link>
+			</koken:content_image>
+
+			<koken:if true="settings.show_title">
+				<h3>
+					<koken:link>
+						{{ content.title | content.filename }}
+					</koken:link>
+				</h3>
+			</koken:if>
+
+			<koken:if true="settings.show_caption">
+				{{ content.caption paragraphs="true" }}
+			</koken:if>
+
+		</div>
+
+	</koken:loop>
+
+	<koken:if true="settings.show_more_albums">
+
+		<koken:load source="albums">
+
+			<div id="foot-more">
+
+				<div class="content-row">
+
+					<koken:link title="{{ labels.album.plural }}" bind_to_key="up" to="albums"><h3>{{ labels.album.plural }}<h3></koken:link>
+
+				</div>
+
+				<koken:include file="inc/loop-album-grid.html" />
+
+			</div>
+
+		</koken:load>
+
+	</koken:if>
+
+	<koken:keyboard_scroll element="div.list-image" offset="50" />
+
+</koken:load>
+
+<koken:include file="inc/footer.html" />

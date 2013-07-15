@@ -1,0 +1,21 @@
+<koken:include file="inc/head.html" />
+
+	<koken:include file="inc/header-sets.html" />
+
+	<koken:load>
+
+		<koken:include file="inc/albums.html" />
+
+		<koken:else>
+
+			<koken:note>
+
+				<p class="null"><strong>No sets found.</strong> Create some in the Library.</p>
+
+			</koken:note>
+
+	</koken:load>
+
+<koken:asset file="js/thumbs.js" />
+
+<koken:include file="inc/footer.html" />

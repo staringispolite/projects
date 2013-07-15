@@ -1,0 +1,25 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:georss="http://www.georss.org/georss" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+	<channel>
+		<koken:load>
+			<title>
+				<![CDATA[{{ site.title }}: {{ album.title }}]]>
+			</title>
+			<link>
+				<![CDATA[<koken:link echo="true" />]]>
+			</link>
+			<description>
+				<![CDATA[{{ site.title }}: Recent uploads from the {{ album.title }} {{ labels.album.singular case="lower" }}]]>
+			</description>
+			<guid>
+				<![CDATA[<koken:link echo="true" />]]>
+			</guid>
+			<generator>
+				http://koken.me
+			</generator>
+			<lastBuildDate><koken:time raw="true" /></lastBuildDate>
+			<koken:loop>
+				<koken:include file="inc/content.rss.lens" />
+			</koken:loop>
+		</koken:load>
+	</channel>
+</rss>

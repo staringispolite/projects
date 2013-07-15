@@ -1,0 +1,95 @@
+<koken:include file="inc/header.html" />
+
+<koken:load>
+
+	<koken:head>
+		<meta property="og:site_name" content="{{ site.title }}" />
+		<meta property="og:title" content="{{ essay.title strip_html="true" }}" />
+		<meta property="og:description" content="{{ essay.excerpt strip_html="true" }}" />
+		<meta property="og:url" content="{{ essay.url }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="{{ essay.featured_image.presets.medium_large.url }}" />
+		<meta property="og:image:width" content="{{ essay.featured_image.presets.medium_large.width }}" />
+		<meta property="og:image:height" content="{{ essay.featured_image.presets.medium_large.height }}" />
+		<meta name="medium" content="article" />
+		<koken:not empty="profile.twitter">
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:title" content="{{ essay.title truncate="70" }}" />
+			<meta name="twitter:site" content="@{{ profile.twitter }}" />
+			<meta name="twitter:creator" content="@{{ profile.twitter }}" />
+			<meta name="twitter:description" content="{{ essay.excerpt truncate="200" strip_html="true" }}" />
+			<meta name="twitter:image" content="{{ essay.featured_image.presets.medium_large.url }}" />
+		</koken:not>
+	</koken:head>
+
+	<article>
+
+		<koken:include file="inc/article.html" />
+
+		<koken:if true="settings.social_bttns_show_one">
+
+			<ul class="social-links">
+				<li><koken:if empty="profile.twitter"><a href="https://twitter.com/intent/tweet?text={{ essay.title url_encode="true" }}&url={{ essay.url url_encode="true" }}" class="share-twitter" title="Share {{ essay.title url_encode="true" }} on Twitter"><koken:else><a href="https://twitter.com/intent/tweet?text={{ essay.title url_encode="true" }}&url={{ essay.url url_encode="true" }}&via={{ profile.twitter }}" class="share-twitter" title="Share {{ essay.title url_encode="true" }} on Twitter"></koken:if><i class="kicon-share-twitter"></i></a></li><li><a href="https://www.facebook.com/sharer.php?u={{ essay.url url_encode="true" }}" class="share-facebook" title="Share {{ essay.title url_encode="true" }} on Facebook"><i class="kicon-share-facebook"></i></a></li><li><a href="http://www.tumblr.com/share/photo?source={{ essay.featured_image.presets.medium_large.url url_encode="true" }}&caption=%3Cp%3E%3Cstrong%3E%3Ca href=&quot;{{ essay.url url_encode="true" }}&quot; title=&quot;{{ essay.title url_encode="true" }}&quot;%3E{{ essay.title url_encode="true" }}%3C/a%3E%3C%2Fstrong%3E%3C%2Fp%3E%3Cp%3E{{ essay.excerpt url_encode="true" }}%3C%2Fp%3E&click_thru={{ essay.url url_encode="true" }}" class="share-tumblr" title="Share {{ essay.title url_encode="true" }} on Tumblr"><i class="kicon-share-tumblr"></i></a></li><li><a href="https://plus.google.com/share?url={{ essay.url url_encode="true" }}" class="share-google" title="Share {{ essay.url url_encode="true" }} on Google+"><i class="kicon-share-gplus"></i></a></li>
+			</ul>
+
+			<koken:asset file="js/obs-share.js" />
+
+		</koken:if>
+
+		<koken:if true="settings.social_bttns_show_two">
+
+			<div id="social-bttns">
+				<div class="cell left">
+					<div style="float:right;">
+						<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+					</div>
+				</div>
+				<div class="cell right">
+					<div style="float:left;">
+						<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+					</div>
+				</div>
+			</div>
+
+		</koken:if>
+
+		<koken:if true="settings.show_disc_essay">
+
+			<div id="kdiscuss">
+
+				<koken:discussion>
+
+					{{ discussion }}
+
+				</koken:discussion>
+
+			</div>
+
+		</koken:if>
+
+		<koken:load source="featured_essays">
+			<div id="feat-essays">
+				<h2>Featured {{ labels.essay.plural case="lower" }}</h2>
+				<div id="essay-list">
+					<koken:loop>
+						<div>
+							<koken:featured_image>
+								<koken:link><koken:img size="16:9" /></koken:link>
+							</koken:featured_image>
+							<koken:time show="date" />
+							<h3>
+								<koken:link title="Read {{ essay.title }}">{{ essay.title }}</koken:link>
+							</h3>
+							{{ essay.excerpt }} <koken:link title="Read {{ essay.title }}">more</koken:link>
+						</div>
+					</koken:loop>
+				</div>
+			</div>
+		</koken:load>
+
+	</article>
+
+</koken:load>
+
+<koken:include file="inc/footer.html" />

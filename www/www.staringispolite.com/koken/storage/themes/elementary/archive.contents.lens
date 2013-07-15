@@ -1,0 +1,37 @@
+<koken:include file="layouts/header.html" />
+
+<koken:load limit="{{ settings.content_index_limit }}">
+
+<div class="head">
+
+	<h2>
+		<koken:breadcrumbs separator="/" />
+	</h2>
+
+</div>
+
+<div class="stream">
+
+	<ol class="thumbs">
+
+		<koken:loop>
+			<koken:include file="layouts/content_list_item.html" />
+		</koken:loop>
+
+	</ol>
+
+</div>
+
+<koken:include file="layouts/pagination.html" />
+
+<koken:else>
+
+	<koken:note>
+
+		<strong>No content found.</strong> Upload some in the Library.
+
+	</koken:note>
+
+</koken:load>
+
+<koken:include file="layouts/footer.html" />
