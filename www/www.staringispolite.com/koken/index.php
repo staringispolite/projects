@@ -1,5 +1,5 @@
-<?php 
-	
-	// Set this so the system will know they are using index.php?/this/that type URLs
+<?php
+
 	$rewrite = false;
-	require 'app' . DIRECTORY_SEPARATOR . 'site' . DIRECTORY_SEPARATOR . 'site.php';
+	$real_base_folder = '/koken';
+	require '/var/www/www.staringispolite.com/koken/app' . DIRECTORY_SEPARATOR . 'site' . DIRECTORY_SEPARATOR . 'site.php';
