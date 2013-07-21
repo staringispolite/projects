@@ -39,11 +39,11 @@ define('DB_COLLATE', '');
 define('FTP_HOST', 'ftp://staringispolite.com');
 define('FTP_USER', 'wpuser');
 define('FTP_PASS', 'passWPword1.');
-define('FTP_BASE', '/var/www/staringispolite.com/');
-define('FTP_CONTENT_DIR', '/var/www/staringispolite.com/wp-content/');
-define('FTP_PLUGIN_DIR', '/var/www/staringispolite.com/wp-content/plugins/');
-define('FS_METHOD', 'ftpext');
+define('FTP_BASE', '/var/www/www.staringispolite.com/blog/');
+define('FTP_CONTENT_DIR', '/var/www/www.staringispolite.com/blog/wp-content/');
+define('FTP_PLUGIN_DIR', '/var/www/www.staringispolite.com/blog/wp-content/plugins/');
 define('FTP_SSL', false);
+define('FTP_METHOD', 'ftpsockets');
 
 /**#@+
  * Authentication Unique Keys and Salts.
