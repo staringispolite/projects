@@ -88,8 +88,8 @@ body {
 	width: 100%;
 }
 #content {
-	margin: 0 34% 0 7.6%;
-	width: 58.4%;
+	margin: 0 34% 0 2.6%;
+	width: 66.4%;
 }
 #secondary {
 	float: right;
@@ -735,7 +735,7 @@ a:hover {
 .hentry,
 .no-results {
 	border-bottom: 1px solid #ddd;
-	margin: 0 0 1.625em;
+	margin: -20px 0 1.625em;
 	padding: 0 0 1.625em;
 	position: relative;
 }
@@ -769,7 +769,28 @@ a:hover {
 .entry-title a:hover,
 .entry-title a:focus,
 .entry-title a:active {
-	color: #1982d1;
+	color: #fa3c24;
+}
+#recent-posts-2 a,
+#recent-comments-2 a,
+#archives-2 a,
+#categories-2 a {
+    color: #555;
+}
+#recent-posts-2 a:hover,
+#recent-comments-2 a:hover,
+#archives-2 a:hover,
+#categories-2 a:hover,
+#recent-posts-2 a:active,
+#recent-comments-2 a:active,
+#archives-2 a:active,
+#categories-2 a:active,
+#recent-posts-2 a:focus,
+#recent-comments-2 a:focus,
+#archives-2 a:focus,
+#categories-2 a:focus {
+    color: #fa3c24;
+    text-decoration: none;
 }
 .entry-meta {
 	color: #666;
@@ -1073,7 +1094,7 @@ object {
 .entry-header .comments-link a:hover,
 .entry-header .comments-link a:focus,
 .entry-header .comments-link a:active {
-	background-color: #1982d1;
+	background-color: #fa3c24;
 	color: #fff;
 	color: rgba(255,255,255,0.8);
 }
