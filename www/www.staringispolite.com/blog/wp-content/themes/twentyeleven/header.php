@@ -105,8 +105,10 @@
     }
 
     p {
-        font-size:14px;
+        font-size:16px;
         margin-bottom:14px;
+        font-weight: 100;
+        letter-spacing: .4px;
     }
 
     h1,h2,h3,h4,h5,h6 {
