@@ -25,6 +25,12 @@
  * @link http://www.phpclasses.org/browse/package/1743.html Site
  * @license LGPL License http://www.opensource.org/licenses/lgpl-license.html
  */
+
+/**
+ * Patched by darkman82<at>interfree.it 
+ * against http://wordpress.org/support/topic/288093 issue
+ *
+ */
 class ftp extends ftp_base {
 
 	function ftp($verb=FALSE, $le=FALSE) {
@@ -70,6 +76,7 @@ class ftp extends ftp_base {
 		return $sock;
 	}
 
+	//patched by darkman82<at>interfree.it
 	function _readmsg($fnction="_readmsg"){
 		if(!$this->_connected) {
 			$this->PushError($fnction,'Connect first');
@@ -78,20 +85,22 @@ class ftp extends ftp_base {
 		$result=true;
 		$this->_message="";
 		$this->_code=0;
-		$go=true;
-		do {
+		// Read until at least ONE line is available
+		while( ($pos = strpos($this->_buffz, CRLF))===false ){
 			$tmp=@socket_read($this->_ftp_control_sock, 4096, PHP_BINARY_READ);
-			if($tmp===false) {
-				$go=$result=false;
-				$this->PushError($fnction,'Read failed', socket_strerror(socket_last_error($this->_ftp_control_sock)));
-			} else {
-				$this->_message.=$tmp;
-				$go = !preg_match("/^([0-9]{3})(-.+\\1)? [^".CRLF."]+".CRLF."$/Us", $this->_message, $regs);
-			}
-		} while($go);
+			if($tmp===false){
+                                $this->PushError($fnction,'Read failed', socket_strerror(socket_last_error($this->_ftp_control_sock)));
+                                return FALSE;
+                        }
+			$this->_buffz.=$tmp;
+		}
+		$this->_message = substr($this->_buffz,0,$pos).CRLF;
+		$this->_buffz = substr($this->_buffz,$pos+strlen(CRLF));
+		if( !preg_match("/^([0-9]{3})(-.+\\1)? .+$/Us",$this->_message, $regs))
+			return ($this->_readmsg($fnction));
 		if($this->LocalEcho) echo "GET < ".rtrim($this->_message, CRLF).CRLF;
-		$this->_code=(int)$regs[1];
-		return $result;
+                $this->_code=(int)$regs[1];
+                return $result;
 	}
 
 	function _exec($cmd, $fnction="_exec") {
@@ -100,6 +109,7 @@ class ftp extends ftp_base {
 			return FALSE;
 		}
 		if($this->LocalEcho) echo "PUT > ",$cmd,CRLF;
+		$this->_buffz="";
 		$status=@socket_write($this->_ftp_control_sock, $cmd.CRLF);
 		if($status===false) {
 			$this->PushError($fnction,'socket write failed', socket_strerror(socket_last_error($this->stream)));
