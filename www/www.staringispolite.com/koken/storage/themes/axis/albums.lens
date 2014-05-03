@@ -1,0 +1,15 @@
+<koken:include file="layouts/header.html" />
+
+<koken:load>
+
+	<koken:include file="layouts/albums.html" />
+
+<koken:else>
+
+	<koken:note>
+		<strong>No albums found.</strong> Create some in the Library.
+	</koken:note>
+
+</koken:load>
+
+<koken:include file="layouts/footer.html" />

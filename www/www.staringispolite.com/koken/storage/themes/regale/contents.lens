@@ -1,0 +1,17 @@
+<koken:include file="inc/header.html" />
+
+<koken:load limit="30" infinite="true">
+
+	<koken:include file="inc/grid.html" />
+
+<koken:else>
+
+	<koken:note>
+
+		<strong>No content found.</strong> Upload some in the Library.
+
+	</koken:note>
+
+</koken:load>
+
+<koken:include file="inc/footer.html" />

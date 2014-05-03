@@ -1,0 +1,128 @@
+<koken:include file="layouts/header.html" />
+
+<koken:load>
+
+<koken:head>
+	<meta property="og:site_name" content="{{ site.title }}" />
+	<meta property="og:title" content="{{ content.title|content.filename strip_html="true" }}" />
+	<meta property="og:description" content="{{ content.caption strip_html="true" }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="{{ content.presets.medium_large.url }}" />
+	<meta property="og:image:width" content="{{ content.presets.medium_large.width }}" />
+	<meta property="og:image:height" content="{{ content.presets.medium_large.height }}" />
+	<meta property="og:url" content="{{ content.url }}" />
+	<koken:content_image>
+		<koken:not empty="profile.twitter">
+			<meta name="twitter:card" content="photo" />
+			<meta name="twitter:site" content="@{{ profile.twitter }}" />
+			<meta name="twitter:creator" content="@{{ profile.twitter }}" />
+		</koken:not>
+	</koken:content_image>
+</koken:head>
+
+<ul id="nav-content">
+	<li>
+		<koken:previous>
+			<koken:link title="Previous" bind_to_key="left">&larr;&nbsp;Prev</koken:link>
+		<koken:else>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</koken:previous>
+	</li>
+	<li>
+		<koken:link lightbox="true" title="Lightbox" bind_to_key="l">Lightbox</koken:link>
+	</li>
+	<li>
+		<koken:next>
+			<koken:link title="Next" bind_to_key="right">Next&nbsp;&rarr;</koken:link>
+		<koken:else>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</koken:next>
+	</li>
+</ul>
+
+<div class="main-content">
+
+	<koken:content_video>
+
+		<koken:video />
+
+	</koken:content_video>
+
+	<koken:content_image>
+
+		<koken:img lazy="true" class="img-content" />
+
+	</koken:content_image>
+
+</div>
+
+<div class="text-content">
+
+	<koken:if true="settings.show_content_title">
+		<h2>{{ content.title | content.filename }}</h2>
+	</koken:if>
+
+	<koken:if true="settings.show_content_caption">
+		<div id="caption-content">
+			{{ content.caption paragraphs="true" }}
+		</div>
+	</koken:if>
+
+</div>
+
+<koken:if true="settings.social_bttns_show_one">
+
+	<koken:if true="content.public">
+
+		<ul class="social-links">
+			<li><koken:if empty="profile.twitter"><a href="https://twitter.com/intent/tweet?text={{ content.title|content.filename url_encode="true" }}&url={{ content.url url_encode="true" }}" class="share-twitter"><koken:else><a href="https://twitter.com/intent/tweet?text={{ content.title|content.filename url_encode="true" }}&url={{ content.url url_encode="true" }}&via={{ profile.twitter }}" class="share-twitter"></koken:if><i class="kicon-share-twitter"></i></a></li><li><a href="https://www.facebook.com/sharer.php?u={{ content.url url_encode="true" }}" class="share-facebook" title="Share {{ content.title|content.filename url_encode="true" }} on Facebook"><i class="kicon-share-facebook"></i></a></li><li><a href="http://pinterest.com/pin/create/button/?url={{ content.url url_encode="true" }}&media={{ content.presets.large.url url_encode="true" }}&description={{ content.title|content.filename url_encode="true" }}" class="share-pinterest" title="Share {{ content.title|content.filename url_encode="true" }} on Pinterest"><i class="kicon-share-pinterest"></i></a></li><li><a href="http://www.tumblr.com/share/photo?source={{ content.presets.large.url url_encode="true"  }}&caption=%3Cp%3E%3Cstrong%3E%3Ca href=&quot;{{ content.url url_encode="true" }}&quot; title=&quot;{{ content.title|content.filename }}&quot;%3E{{ content.title|content.filename }}%3C/a%3E%3C/strong%3E%3C/p%3E%3Cp%3E{{ content.caption }}%3C/p%3E&click_thru={{ content.url url_encode="true" }}" class="share-tumblr" title="Share {{ content.title|content.filename url_encode="true" }} on Tumblr"><i class="kicon-share-tumblr"></i></a></li><li><a href="https://plus.google.com/share?url={{ content.url url_encode="true" }}" class="share-google" title="Share {{ content.url url_encode="true" }} on Google+"><i class="kicon-share-gplus"></i></a></li>
+		</ul>
+
+		<koken:asset file="js/axis-share.js" />
+
+	</koken:if>
+
+</koken:if>
+
+<koken:if true="settings.social_bttns_show_two">
+
+	<div id="social-bttns">
+		<div class="cell left">
+			<div style="float:right;">
+				<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+			</div>
+		</div>
+		<div class="cell right">
+			<div style="float:left;">
+				<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+		</div>
+	</div>
+
+</koken:if>
+
+<koken:parent>
+
+	<p class="parent-album">From the {{ labels.album.singular case="lower" }}
+	<koken:link>{{ album.title }}</koken:link></p>
+
+</koken:parent>
+
+<koken:if true="settings.show_disc_content">
+
+	<div id="kdiscuss">
+
+		<koken:discussion>
+
+			{{ discussion }}
+
+		</koken:discussion>
+
+	</div>
+
+</koken:if>
+
+</koken:load>
+
+<koken:include file="layouts/footer.html" />

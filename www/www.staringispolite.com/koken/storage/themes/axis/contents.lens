@@ -1,0 +1,15 @@
+<koken:include file="layouts/header.html" />
+
+<koken:if data="settings.contents_layout" equals="list">
+
+	<koken:include file="layouts/contents-list.html" />
+
+</koken:if>
+
+<koken:if data="settings.contents_layout" equals="grid">
+
+	<koken:include file="layouts/contents-grid.html" />
+
+</koken:if>
+
+<koken:include file="layouts/footer.html" />

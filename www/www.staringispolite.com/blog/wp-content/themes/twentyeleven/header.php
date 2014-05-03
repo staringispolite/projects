@@ -65,49 +65,198 @@
 	 */
 	wp_head();
 ?>
+<!-- Styles from Koken -->
+<link rel="stylesheet" type="text/css" media="all" href="http://staringispolite.com/koken/app/site/themes/common/css/reset.css?0.9.2" />
+<link rel="stylesheet" type="text/css" media="all" href="http://staringispolite.com/koken/storage/themes/repertoire/css/fonts/default.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://staringispolite.com/koken/storage/themes/repertoire/css/skeleton.css?1.3.2" /> 
+
+<style type="text/css">
+    body {
+        font-size:14px;
+        line-height:1.5;
+        font-weight:normal;
+        text-align:center;
+        background:#ffffff;
+        color:#666666;
+        text-rendering:optimizeLegibility;
+        -webkit-font-smoothing: subpixel-antialiased;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    img {
+        -ms-interpolation-mode: bicubic;
+    }
+
+    a:link, a:visited, a:hover, a:active {
+        color:#1981D1;
+        text-decoration:none;
+    }
+
+    a:hover {
+        color:#fa3c24;
+    }
+
+    b, strong {
+        font-weight:bold;
+    }
+
+    em, i {
+        font-style:italic;
+    }
+
+    p {
+        font-size:14px;
+        margin-bottom:14px;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        font-size:12px;
+        color:#222222;
+        font-weight:400;
+        text-transform:uppercase;
+        letter-spacing:2px;
+    }
+
+    h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+        color:inherit;
+    }
+
+    .meta {
+        font-size:11px;
+        color:#999999;
+    }
+
+    .meta a:link, .meta a:visited, .meta a:active {
+        color:inherit;
+    }
+
+    .meta a:hover {
+        color:#fa3c24;
+    }
+
+    div.detail-text {
+        font-size:14px;
+        line-height:24px;
+    }
+
+    header.top {
+        text-align:left;
+        margin:0 auto 50px;
+        overflow:auto;
+    }
+
+    header h1 {
+        margin:0 0 10px;
+        padding:0;
+        font-size: 21px;
+        line-height: 18px;
+        font-weight: 400;
+    }
+
+    header h2 {
+        font-size:15px !important;
+        margin-bottom:8px;
+        font-weight: 400;
+    }
+
+    header span.tagline {
+        font-size:11px;
+        text-transform:none;
+        letter-spacing:0;
+    }
+
+    header h6 {
+        font-size:11px;
+        text-transform:none;
+        letter-spacing:0;
+        margin-bottom:8px;
+    }
+
+    nav li {
+        margin-bottom:4px;
+        font-size:12px;
+    }
+
+    nav li a:link, nav li a:visited, nav li a:hover, nav li a:active {
+        color:#666666;
+        text-decoration:none;
+    }
+
+    nav li a:hover {
+        color:#000000;
+    }
+
+    nav a.k-nav-current {
+        color:#fa3c24 !important;
+    }
+
+    div.container {
+      margin-top: 20px;   
+    }
+
+    header span.tagline {
+        display: inline-block;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        line-height: 22px;
+        width: 210px;
+        font-size: 12px;
+    }
+
+    header.top {
+      margin-bottom: 0px;
+    }
+
+    .home-essays {
+      width: 200px;
+      margin-right: 20px;
+      margin-top: -10px;
+    }
+
+    div.home-essays p {
+       font-family: 'Karla', 'Helvetica Nueue', Helvetica, Arial, sans-serif;
+       line-height: 22px;
+       font-size: 12px;
+    }
+</style>
+<!-- end styles from Koken -->
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> style="text-align: left">
+<!--
+<div style="text-align: center; color: #ccc; background-color: #464646">
+  NOTE: Currently re-working the header - bear with me, things might break.
+</div>
+-->
 <div id="page" class="hfeed">
-	<header id="branding" role="banner">
-          <div id="main-image"
-              style="background-image: url('<?php echo header_image();?>');">
-			<hgroup>
-				<h1 id="site-title">
-                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img
-                      src="http://www.staringispolite.com/images/sun_logo.jpeg"
-                      style="width: 75px; height: 75px; float: left;"/></a>
-                  <div id="name">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                  </div>
-				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-               </h1>
-               <h1 id="site-title-background"></h1>
-			</hgroup>
-          </div>
 
-			<?php
-				// Has the text been hidden?
-				if ( 'blank' == get_header_textcolor() ) :
-			?>
-				<div class="only-search<?php if ( ! empty( $header_image ) ) : ?> with-image<?php endif; ?>">
-				<?php //get_search_form(); ?>
-				</div>
-			<?php
-				else :
-			?>
-				<?php //get_search_form(); ?>
-			<?php endif; ?>
+  <div class="container">
+  <header class="top">
+  <!--
+  <header class="top" style="display:none">
+  -->
 
-			<nav id="access" role="navigation">
-				<h3 class="assistive-text"><?php _e( 'Main menu', 'twentyeleven' ); ?></h3>
-				<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to primary content', 'twentyeleven' ); ?></a></div>
-				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to secondary content', 'twentyeleven' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #access -->
-	</header><!-- #branding -->
+    <div class="row">
 
+    <div class="four columns">
+    <h1><a href="/index.php?/" class="k-nav-current">Jonathan Howard</a></h1>   <span class="tagline">Co-founder and CEO of Emissary. Founder of Univ of Maryland Games Programming course. Co-founder of Issue Dictionary (acquired 2008).</span>
+    </div>
+    <div class="four columns">
+    <h2>Content</h2>    <nav>
+    <ul class="k-nav-list k-nav-root "><li><a href="/index.php?/">Home</a></li><li><a href="/index.php?/albums/">Albums</a></li><li><a class="k-nav-current" target="" href="http://staringispolite.com/blog">Blog</a></li><li><a target="" href="http://staringispolite.com/resume">Resume</a></li></ul>   </nav>
+    </div>
+    <div class="four columns">
+    <h2>Social</h2> <nav>
+    <ul class="k-nav-list k-nav-root "><li><a target="_blank" href="https://twitter.com/staringispolite">Twitter</a></li><li><a target="_blank" href="https://www.facebook.com/staringispolite">Facebook</a></li><li><a target="_blank" href="https://plus.google.com/102379749917261993538/posts">Google+</a></li><li><a target="_blank" href="http://www.linkedin.com/in/staringispolite/">LinkedIn</a></li></ul> </nav>
+    </div>
+    <div class="four columns">
+    <h2>Projects</h2>   <nav>
+    <ul class="k-nav-list k-nav-root "><li><a target="_blank" href="http://staringispolite.com/likepython">Like, Python: Code like you speak</a></li><li><a target="_blank" href="http://code.google.com/p/sevenup">SevenUp: User-friendly IE6+ upgrader</a></li><li><a href="/index.php?/pages/dance/">Hip Hop Dance</a></li></ul> </nav>
+    </div>
+
+    </div>
+
+  </header>
+  </div>
 
 	<div id="main">
